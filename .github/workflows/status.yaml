@@ -1,0 +1,7 @@
+name: Forward commit status
+on: status
+jobs:
+  forward:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo ${{github.event.sha github.event.state}}
