@@ -7,12 +7,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set error
-        if: ${{ contains(github.event.commits[0][message], error)}}
+        if: ${{ contains(github.event.commits[0].message, error)}}
         uses: ouzi-dev/commit-status-updater@v1.1.0
         with:
           status: "error"
       - name: Set success
-        if: ${{ contains(github.event.commits[0][message], success)}}
+        if: ${{ contains(github.event.commits[0].message, success)}}
         uses: ouzi-dev/commit-status-updater@v1.1.0
         with:
           status: "success"
