@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          COMMIT_STATE: ${{github.event.sha github.event.state}}
+          COMMIT_STATE: ${{github.event.sha}} ${{github.event.state}}
         run: echo $GITHUB_SHA $COMMIT_STATE
